@@ -1,0 +1,16 @@
+/*
+ * Copyright (C) 2012 PrimeBox (info@primebox.co.uk)
+ * 
+ * This work is licensed under the Creative Commons
+ * Attribution 3.0 Unported License. To view a copy
+ * of this license, visit
+ * http://creativecommons.org/licenses/by/3.0/.
+ * 
+ * Documentation available at:
+ * http://www.primebox.co.uk/projects/cookie-bar/
+ * 
+ * When using this software you use it at your own risk. We hold
+ * no responsibility for any damage caused by using this plugin
+ * or the documentation provided.
+ */
+!function(e){e.cookieBar=function(o,c){if("cookies"==o)var i="cookies";else if("set"==o)var i="set";else var i=!1;var a={message:'"computefreely.org" makes use of cookies. Your continued use of this site means you accept',acceptButton:!0,acceptText:"I understand",declineButton:!1,declineText:"No Thanks",policyButton:!0,policyText:"Privacy Policy",policyURL:"/privacy-policy/",autoEnable:!0,expireDays:365,forceShow:!1,effect:"slide",element:"body",append:!1,fixed:!0,redirect:String(window.location.href),domain:String(window.location.hostname)},o=e.extend(a,o),t=new Date;t.setTime(t.getTime()+24*o.expireDays*60*60*1e3),t=t.toGMTString();var n,r,l="cb-enabled={value}; expires="+t+"; path=/",d="",p=document.cookie.split("; ");for(n=0;n<p.length;n++)r=p[n].split("="),"cb-enabled"==r[0]&&(d=r[1]);if(""==d&&o.autoEnable&&(d="enabled",document.cookie=l.replace("{value}","enabled")),"cookies"==i)return"enabled"==d||"accepted"==d?!0:!1;if("set"==i&&("accepted"==c||"declined"==c))return document.cookie=l.replace("{value}",c),"accepted"==c?!0:!1;var s=o.message.replace("{policy_url}",o.policyURL);if(o.acceptButton)var f='<a href="" class="cb-enable">'+o.acceptText+"</a>";else var f="";if(o.declineButton)var u='<a href="" class="cb-disable">'+o.declineText+"</a>";else var u="";if(o.policyButton)var b='<a href="'+o.policyURL+'" class="cb-policy">'+o.policyText+"</a>";else var b="";if(o.fixed)var v=' class="fixed"';else var v="";(o.forceShow||"enabled"==d||""==d)&&(o.append?e(o.element).append('<div id="cookie-bar"'+v+"><p>"+s+f+u+b+"</p></div>"):e(o.element).prepend('<div id="cookie-bar"'+v+"><p>"+s+f+u+b+"</p></div>")),e("#cookie-bar .cb-enable").click(function(){return document.cookie=l.replace("{value}","accepted"),"enabled"==d||"accepted"==d?("slide"==o.effect?e("#cookie-bar").slideUp(300,function(){e("#cookie-bar").remove()}):"fade"==o.effect?e("#cookie-bar").fadeOut(300,function(){e("#cookie-bar").remove()}):e("#cookie-bar").hide(0,function(){e("#cookie-bar").remove()}),!1):(window.location=o.currentLocation,void 0)}),e("#cookie-bar .cb-disable").click(function(){var c=new Date;for(c.setTime(c.getTime()-864e6),c=c.toGMTString(),p=document.cookie.split("; "),n=0;n<p.length;n++)r=p[n].split("="),document.cookie=r[0].indexOf("_")>=0?r[0]+"=0; expires="+c+"; domain="+o.domain.replace("www","")+"; path=/":r[0]+"=0; expires="+c+"; path=/";return document.cookie=l.replace("{value}","declined"),"enabled"!=d||"accepted"==d?("slide"==o.effect?e("#cookie-bar").slideUp(300,function(){e("#cookie-bar").remove()}):"fade"==o.effect?e("#cookie-bar").fadeOut(300,function(){e("#cookie-bar").remove()}):e("#cookie-bar").hide(0,function(){e("#cookie-bar").remove()}),!1):(window.location=o.currentLocation,void 0)})}}(jQuery);
