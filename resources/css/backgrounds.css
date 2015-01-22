@@ -1,1 +1,86 @@
-.blue{background-color:#008BDB}.black{background-color:#000000}.brown{background-color:#331C15}.green{background-color:#46951d}.grey{background-color:#777777}.orange{background-color:#eb8522}.purple{background-color:#A348B1}.red{background-color:#c51e1d}.yellow{background-color:#F8C300}.facebook{background-color:#3B5998}.googleplus{background-color:#DD4B39}.twitter{background-color:#55ACEE}.arch{background-color:#1E97D3}.mint{background-color:#7FC33A}.ubuntu{background-color:#dd4814}.elementary{background-color:#333}.opensuse{background-color:#73BA25}.debian{background-color:#D70751}.fedora{background-color:#1E4A88}
+/*--------BEGINNING OF STYLESHEET--------*/
+
+/*----- Colours -----*/
+
+
+.blue {
+    background-color: #008BDB;
+}
+
+.black {
+    background-color: #000000;
+}
+
+.brown {
+    background-color: #331C15;
+}
+
+.green {
+    background-color: #46951d;
+}
+
+.grey {
+    background-color: #777777;
+}
+
+.orange {
+    background-color: #eb8522;
+}
+
+.purple {
+    background-color: #A348B1;
+}
+
+.red {
+    background-color: #c51e1d;
+}
+
+.yellow {
+    background-color: #F8C300;
+}
+
+/* Social */
+
+.facebook {
+    background-color: #3B5998;
+}
+
+.googleplus {
+    background-color: #DD4B39;
+}
+
+
+.twitter {
+    background-color: #55ACEE;
+}
+
+/* Distros */
+
+.arch {
+    background-color: #1E97D3;
+}
+
+.mint {
+    background-color: #7FC33A;
+}
+
+.ubuntu {
+    background-color: #dd4814;
+}
+
+.elementary {
+    /*background-color: #3d9bda;*/
+    background-color: #333;
+}
+
+.opensuse {
+    background-color: #73BA25;
+}
+
+.debian {
+    background-color: #D70751;
+}
+
+.fedora {
+    background-color: #1E4A88;
+}

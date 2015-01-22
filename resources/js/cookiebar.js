@@ -13,4 +13,154 @@
  * no responsibility for any damage caused by using this plugin
  * or the documentation provided.
  */
-!function(e){e.cookieBar=function(o,c){if("cookies"==o)var i="cookies";else if("set"==o)var i="set";else var i=!1;var a={message:'"computefreely.org" makes use of cookies. Your continued use of this site means you accept',acceptButton:!0,acceptText:"I understand",declineButton:!1,declineText:"No Thanks",policyButton:!0,policyText:"Privacy Policy",policyURL:"/privacy-policy/",autoEnable:!0,expireDays:365,forceShow:!1,effect:"slide",element:"body",append:!1,fixed:!0,redirect:String(window.location.href),domain:String(window.location.hostname)},o=e.extend(a,o),t=new Date;t.setTime(t.getTime()+24*o.expireDays*60*60*1e3),t=t.toGMTString();var n,r,l="cb-enabled={value}; expires="+t+"; path=/",d="",p=document.cookie.split("; ");for(n=0;n<p.length;n++)r=p[n].split("="),"cb-enabled"==r[0]&&(d=r[1]);if(""==d&&o.autoEnable&&(d="enabled",document.cookie=l.replace("{value}","enabled")),"cookies"==i)return"enabled"==d||"accepted"==d?!0:!1;if("set"==i&&("accepted"==c||"declined"==c))return document.cookie=l.replace("{value}",c),"accepted"==c?!0:!1;var s=o.message.replace("{policy_url}",o.policyURL);if(o.acceptButton)var f='<a href="" class="cb-enable">'+o.acceptText+"</a>";else var f="";if(o.declineButton)var u='<a href="" class="cb-disable">'+o.declineText+"</a>";else var u="";if(o.policyButton)var b='<a href="'+o.policyURL+'" class="cb-policy">'+o.policyText+"</a>";else var b="";if(o.fixed)var v=' class="fixed"';else var v="";(o.forceShow||"enabled"==d||""==d)&&(o.append?e(o.element).append('<div id="cookie-bar"'+v+"><p>"+s+f+u+b+"</p></div>"):e(o.element).prepend('<div id="cookie-bar"'+v+"><p>"+s+f+u+b+"</p></div>")),e("#cookie-bar .cb-enable").click(function(){return document.cookie=l.replace("{value}","accepted"),"enabled"==d||"accepted"==d?("slide"==o.effect?e("#cookie-bar").slideUp(300,function(){e("#cookie-bar").remove()}):"fade"==o.effect?e("#cookie-bar").fadeOut(300,function(){e("#cookie-bar").remove()}):e("#cookie-bar").hide(0,function(){e("#cookie-bar").remove()}),!1):(window.location=o.currentLocation,void 0)}),e("#cookie-bar .cb-disable").click(function(){var c=new Date;for(c.setTime(c.getTime()-864e6),c=c.toGMTString(),p=document.cookie.split("; "),n=0;n<p.length;n++)r=p[n].split("="),document.cookie=r[0].indexOf("_")>=0?r[0]+"=0; expires="+c+"; domain="+o.domain.replace("www","")+"; path=/":r[0]+"=0; expires="+c+"; path=/";return document.cookie=l.replace("{value}","declined"),"enabled"!=d||"accepted"==d?("slide"==o.effect?e("#cookie-bar").slideUp(300,function(){e("#cookie-bar").remove()}):"fade"==o.effect?e("#cookie-bar").fadeOut(300,function(){e("#cookie-bar").remove()}):e("#cookie-bar").hide(0,function(){e("#cookie-bar").remove()}),!1):(window.location=o.currentLocation,void 0)})}}(jQuery);
+
+ 
+(function($){
+	$.cookieBar = function(options,val){
+		if(options=='cookies'){
+			var doReturn = 'cookies';
+		}else if(options=='set'){
+			var doReturn = 'set';
+		}else{
+			var doReturn = false;
+		}
+		var defaults = {
+			message: '"computefreely.org" makes use of cookies. Your continued use of this site means you accept', //Message displayed on bar
+			acceptButton: true, //Set to true to show accept/enable button
+			acceptText: 'I understand', //Text on accept/enable button
+			declineButton: false, //Set to true to show decline/disable button
+			declineText: "No Thanks", //Text on decline/disable button
+			policyButton: true, //Set to true to show Privacy Policy button
+			policyText: 'Privacy Policy', //Text on Privacy Policy button
+			policyURL: '/privacy-policy/', //URL of Privacy Policy
+			autoEnable: true, //Set to true for cookies to be accepted automatically. Banner still shows
+			expireDays: 365, //Number of days for cookieBar cookie to be stored for
+			forceShow: false, //Force cookieBar to show regardless of user cookie preference
+			effect: 'slide', //Options: slide, fade, hide
+			element: 'body', //Ele::ment to append/prepend cookieBar to. Remember "." for class or "#" for id.
+			append: false, //Set to true for cookieBar HTML to be placed at base of website. Actual position may change according to CSS
+			fixed: true, //Set to true to add the class "fixed" to the cookie bar. Default CSS should fix the position
+			redirect: String(window.location.href), //Current location
+			domain: String(window.location.hostname) //Location of privacy policy
+		}
+		var options = $.extend(defaults,options);
+		
+		//Sets expiration date for cookie
+		var expireDate = new Date();
+		expireDate.setTime(expireDate.getTime()+(options.expireDays*24*60*60*1000));
+		expireDate = expireDate.toGMTString();
+		
+		var cookieEntry = 'cb-enabled={value}; expires='+expireDate+'; path=/'
+		
+		//Retrieves current cookie preference
+		var i,cookieValue='',aCookie,aCookies=document.cookie.split('; ');
+		for (i=0;i<aCookies.length;i++){
+			aCookie = aCookies[i].split('=');
+			if(aCookie[0]=='cb-enabled'){
+    			cookieValue = aCookie[1];
+			}
+		}
+		//Sets up default cookie preference if not already set
+		if(cookieValue=='' && options.autoEnable){
+			cookieValue = 'enabled';
+			document.cookie = cookieEntry.replace('{value}','enabled');
+		}
+		if(doReturn=='cookies'){
+			//Returns true if cookies are enabled, false otherwise
+			if(cookieValue=='enabled' || cookieValue=='accepted'){
+				return true;
+			}else{
+				return false;
+			}
+		}else if(doReturn=='set' && (val=='accepted' || val=='declined')){
+			//Sets value of cookie to 'accepted' or 'declined'
+			document.cookie = cookieEntry.replace('{value}',val);
+			if(val=='accepted'){
+				return true;
+			}else{
+				return false;
+			}
+		}else{
+			//Sets up enable/accept button if required
+			var message = options.message.replace('{policy_url}',options.policyURL);
+			
+			if(options.acceptButton){
+				var acceptButton = '<a href="" class="cb-enable">'+options.acceptText+'</a>';
+			}else{
+				var acceptButton = '';
+			}
+			//Sets up disable/decline button if required
+			if(options.declineButton){
+				var declineButton = '<a href="" class="cb-disable">'+options.declineText+'</a>';
+			}else{
+				var declineButton = '';
+			}
+			//Sets up privacy policy button if required
+			if(options.policyButton){
+				var policyButton = '<a href="'+options.policyURL+'" class="cb-policy">'+options.policyText+'</a>';
+			}else{
+				var policyButton = '';
+			}
+			//Whether to add "fixed" class to cookie bar
+			if(options.fixed){
+				var fixed = ' class="fixed"';
+			}else{
+				var fixed = '';
+			}
+			
+			//Displays the cookie bar if arguments met
+			if(options.forceShow || cookieValue=='enabled' || cookieValue==''){
+				if(options.append){
+					$(options.element).append('<div id="cookie-bar"'+fixed+'><p>'+message+acceptButton+declineButton+policyButton+'</p></div>');
+				}else{
+					$(options.element).prepend('<div id="cookie-bar"'+fixed+'><p>'+message+acceptButton+declineButton+policyButton+'</p></div>');
+				}
+			}
+			
+			//Sets the cookie preference to accepted if enable/accept button pressed
+			$('#cookie-bar .cb-enable').click(function(){
+				document.cookie = cookieEntry.replace('{value}','accepted');
+				if(cookieValue!='enabled' && cookieValue!='accepted'){
+					window.location = options.currentLocation;
+				}else{
+					if(options.effect=='slide'){
+						$('#cookie-bar').slideUp(300,function(){$('#cookie-bar').remove()});
+					}else if(options.effect=='fade'){
+						$('#cookie-bar').fadeOut(300,function(){$('#cookie-bar').remove()});
+					}else{
+						$('#cookie-bar').hide(0,function(){$('#cookie-bar').remove()});
+					}
+					return false;
+				}
+			});
+			//Sets the cookie preference to declined if disable/decline button pressed
+			$('#cookie-bar .cb-disable').click(function(){
+				var deleteDate = new Date();
+				deleteDate.setTime(deleteDate.getTime()-(864000000));
+				deleteDate = deleteDate.toGMTString();
+				aCookies=document.cookie.split('; ');
+				for (i=0;i<aCookies.length;i++){
+					aCookie = aCookies[i].split('=');
+					if(aCookie[0].indexOf('_')>=0){
+						document.cookie = aCookie[0]+'=0; expires='+deleteDate+'; domain='+options.domain.replace('www','')+'; path=/';
+					}else{
+						document.cookie = aCookie[0]+'=0; expires='+deleteDate+'; path=/';
+					}
+				}
+				document.cookie = cookieEntry.replace('{value}','declined');
+				if(cookieValue=='enabled' && cookieValue!='accepted'){
+					window.location = options.currentLocation;
+				}else{
+					if(options.effect=='slide'){
+						$('#cookie-bar').slideUp(300,function(){$('#cookie-bar').remove()});
+					}else if(options.effect=='fade'){
+						$('#cookie-bar').fadeOut(300,function(){$('#cookie-bar').remove()});
+					}else{
+						$('#cookie-bar').hide(0,function(){$('#cookie-bar').remove()});
+					}
+					return false;
+				}
+			});
+		}
+	}
+})(jQuery);
