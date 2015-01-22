@@ -157,17 +157,19 @@ section {
 .column {
     display: inline-block;
     min-height: 14em;
-    width:44%;
-    margin-left:1.4em;
-    margin-right:1.4em;
+    width:46%;
 }
 
 .left {
     float: left;
+    margin-right:2%;
+    margin-left:0;
 }
 
 .right {
     float: right;
+    margin-left:2em;
+    margin-right:0;
 }
 
 /*----- Title Section -----*/
