@@ -14,8 +14,8 @@
    height="200"
    viewBox="-1.7718431 -1.7718431 38.652548 38.645137"
    id="svg2870"
-   inkscape:version="0.48.5 r10040"
-   sodipodi:docname="Fedora_logo_and_wordmark.svg">
+   inkscape:version="0.91+devel+osxmenu r12863"
+   sodipodi:docname="logo-fedora.svg">
   <metadata
      id="metadata3035">
     <rdf:RDF>
@@ -24,7 +24,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -37,16 +37,16 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1364"
-     inkscape:window-height="708"
+     inkscape:window-width="1920"
+     inkscape:window-height="970"
      id="namedview3033"
      showgrid="false"
      inkscape:zoom="1"
-     inkscape:cx="94.605424"
-     inkscape:cy="52.570006"
+     inkscape:cx="-58.394576"
+     inkscape:cy="77.021002"
      inkscape:window-x="0"
-     inkscape:window-y="29"
-     inkscape:window-maximized="1"
+     inkscape:window-y="23"
+     inkscape:window-maximized="0"
      inkscape:current-layer="svg2870">
     <inkscape:grid
        type="xygrid"
@@ -60,7 +60,7 @@
      id="defs2872" />
   <g
      id="g3300"
-     transform="translate(-160.33116,1.0800333)">
+     transform="matrix(0.97515185,0,0,0.97515185,-155.9327,1.5104412)">
     <path
        d="M 194.35736,16.449737 C 194.35736,7.3649625 186.99245,0 177.90779,0 168.8271,0 161.46537,7.3587875 161.45876,16.43815 l -5e-4,-5.38e-4 0,12.729488 5e-4,5.37e-4 c 0.005,2.0615 1.67683,3.730388 3.73966,3.730388 l 0.0179,-5.25e-4 9.9e-4,5.25e-4 12.69702,0 c 9.08175,-0.0034 16.44297,-7.365788 16.44297,-16.448288"
        style="fill:#072b61;fill-opacity:1;fill-rule:nonzero;stroke:none"
