@@ -11,20 +11,21 @@ Compute Freely is build purely in HTML, CSS and JavaScript.
 
 # Licensing
 
-This website (computefreely.org) and subsequent contents copyright 2015 Sam Hewitt, some rights reserved.*
+This website (computefreely.org) is copyright &copy; 2015 Sam Hewitt, with some rights reserved.
 
-This website's source code is free software; you can redistribute it and/or modify it under the terms of the Apache License version 2.0.*
+Site content is licensed under the Creative Commons Attribution-ShareAlike 3.0 (http://creativecommons.org/licenses/by-sa/3.0/).
 
-All other content is licensed under a Creative Commons Attribution-ShareAlike 3.0 (http://creativecommons.org/licenses/by-sa/3.0/legalcode) license.*
+Unique source code is free software, licensed under the terms of the Apache License (http://www.apache.org/licenses/LICENSE-2.0).
 
-*Unless otherwise noted.
+Non-unique elements are licensed under the terms of their accompanying licenses, or stated within their source code.
 
+All logos used are trademarks of their respective projects.
 
 # Getting the Source
 
 The source for Compute Freely can be found here: https://github.com/snwh/computefreely
 
-Alternatively, you can clone the latest version its git repository:
+Alternatively, you can clone the latest version from its git repository:
 
     git clone https://github.com/snwh/computefreely.git
 
