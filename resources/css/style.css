@@ -227,6 +227,28 @@ section {
     text-shadow:0px 1px rgba(255,255,255,0.2);
 }
 
+
+.subtitle a {
+    font-weight: 400;
+    color: rgba(0,0,0,0.4);
+    border:none;
+    text-shadow:0px 1px rgba(255,255,255,0.2);
+}
+
+.subtitle a:hover {
+    color:#fff;
+    text-shadow:0px 1px rgba(0,0,0,0.6);
+    transition:ease 200ms;
+    -webkit-transition:ease 200ms;
+}
+
+.subtitle a:active {
+    font-weight: 400;
+    color: rgba(0,0,0,0.4);
+    border:none;
+    text-shadow:0px 1px rgba(255,255,255,0.2);
+}
+
 .freely {
     color:#F8C300;
 }
@@ -493,7 +515,7 @@ ul.schedule-list {
 
 /*----- Common Benefits Section -----*/
 
-#common-benefits {
+#benefits {
     padding-top: 2em;
     padding-bottom: 2em;
     color: #443A33;
@@ -504,12 +526,12 @@ ul.schedule-list {
     box-shadow: inset 0 -1px 0 0 rgba(0,0,0,0.1);
 }
 
-#common-benefits h1 {
+#benefits h1 {
     text-align:center;
     padding-bottom:0.5em;
 }
 
-#common-benefits h2 {
+#benefits h2 {
     color: #149AD4;
 }
    

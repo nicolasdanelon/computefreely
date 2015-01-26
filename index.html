@@ -54,7 +54,7 @@
     <section>
     	<div class="content">
             <p class="title">Compute <span class="freely">Freely</span></p>
-            <p class="subtitle">Free your computer. <span class="bold-subtitle">Use Linux.</span></p>
+            <p class="subtitle">Free your computer. <a href="#benefits" class="bold-subtitle jump-link" id="benefits-link">Use Linux</a>.</p>
         </div>
     </section>
 </div>
@@ -152,7 +152,7 @@
     </section>
 </div>
 <!-- Common Benefits -->
-<div id='common-benefits'>
+<div id='benefits'>
     <section>
         <div class="content">
             <h1>Why use a free &amp; open source operating system?</h1>
@@ -241,7 +241,27 @@
         </ul>
     </section>
 </div>
+<!-- Javascript Stuff -->
+<script type="text/javascript">
+	 // This is a functions that scrolls to #{blah}link
+	function goToByScroll(id){
+	      // Remove "-link" from the ID
+	    id = id.replace("-link", "");
+	      // Scroll
+	    $('html,body').animate({
+	        scrollTop:$("#"+id).offset().top },
+	        'slow');
+	}
 
+	$(".jump-link").click(function(e) { 
+	    // Prevent a page reload when a link is pressed
+	    e.preventDefault(); 
+	    // Call the scroll function
+	    goToByScroll($(this).attr("id"));         
+	});
+
+
+</script>
 <!-- Footer -->
 <div id="footer">
 	<section>
