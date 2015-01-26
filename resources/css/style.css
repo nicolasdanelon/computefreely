@@ -703,7 +703,7 @@ ul.footer-list li a:hover {
 
     ul.distro-list {
         margin: 0;
-        margin-left: 1em;
+        margin-left: -1.5em;
         margin-right: 1em;
     }
     
@@ -775,7 +775,7 @@ ul.footer-list li a:hover {
 
     ul.distro-list {
         margin: 0;
-        margin-left: 1em;
+        margin-left: -1.5em;
         margin-right: 1em;
     }
     
@@ -836,7 +836,7 @@ ul.footer-list li a:hover {
 
     ul.distro-list {
         margin: 0;
-        margin-left: 1em;
+        margin-left: -1.5em;
         margin-right: 1em;
     }
 
