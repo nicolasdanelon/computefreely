@@ -12,5 +12,5 @@
 @font-face {
     font-family:"Ostrich Bold";
     src:local("Ostrich Bold") local(Ostrich-Bold), url(/resources/fonts/ostrich-bold.ttf);
-    font-weight:700;
+    font-weight:600;
 }

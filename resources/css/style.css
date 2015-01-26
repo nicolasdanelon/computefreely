@@ -108,6 +108,29 @@ img {
     border: none;
 }
 
+/*----- Blockquote -----*/
+
+blockquote {
+    opacity: 0.7;
+    font-family:"Slabo 27px", sans-serif;
+    font-style: italic;
+    font-size: 1.5em;
+    line-height: 1.5em;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom:1em;
+    padding-top:1em;
+}
+
+blockquote:before {
+    content: "“ "
+}
+
+blockquote:after {
+    content: "”"
+}
+
 /*----- Main Section -----*/
 
 #main {
@@ -147,27 +170,25 @@ section {
 
 .content {
     display: inline-block;
-    width: 96%;
-    margin-left:1.4em;
-    margin-right:1.4em;
+    width: 100%;
 }
 
 /*----- Columns -----*/
 
 .column {
-    display: inline-block;
-    min-height: 16.5em;
-    width: 44%;
+    z-index: 10;
+    display: block;
+    min-height: 15em;
+    margin: 0;
+    width: 47%;
 }
 
 .left {
     float: left;
-    margin-left:1.4em;
 }
 
 .right {
     float: right;
-    margin-right:1.4em;
 }
 
 /*----- Title Section -----*/
@@ -188,11 +209,12 @@ section {
 .title {
     color: #fff;
     font-family:"Ostrich Bold", sans-serif;
-    font-size: 8em;
+    font-size: 8.4em;
     padding: 0;
     margin-top:0.5em;
-    margin-bottom:0.75em;
+    margin-bottom:1em;
     text-align: center;
+    text-transform: uppercase;
     text-shadow:0px 1px rgba(0,0,0,0.3);
 }
 
@@ -215,7 +237,7 @@ section {
 
 .name {
     font-family:"Ostrich", sans-serif;
-    font-size: 2em;
+    font-size: 2.3em;
     display: block;
     text-align: center;
 }
@@ -238,10 +260,9 @@ section {
 
 ul.distro-list {
     list-style: none;
-    padding: 0;
-    margin-left: 2em;
-    margin-right: 2em;
-    width: auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .distro {
@@ -483,6 +504,11 @@ ul.schedule-list {
     box-shadow: inset 0 -1px 0 0 rgba(0,0,0,0.1);
 }
 
+#common-benefits h1 {
+    text-align:center;
+    padding-bottom:0.5em;
+}
+
 #common-benefits h2 {
     color: #149AD4;
 }
@@ -615,6 +641,7 @@ ul.footer-list li a:hover {
     }
 
     .column {
+        padding: 0;
         min-height: 12em;
     }
 
@@ -667,6 +694,7 @@ ul.footer-list li a:hover {
     }
 
     .column {
+        padding: 0;
         min-height: 12em;
     }
 
@@ -738,6 +766,7 @@ ul.footer-list li a:hover {
     }
 
     .column {
+        padding: 0;
         min-height: 12em;
     }
 
