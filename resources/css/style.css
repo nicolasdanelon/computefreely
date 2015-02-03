@@ -10,7 +10,6 @@ AUTHOR URI:http://snwh.org/
 
 
 @import url(/resources/css/backgrounds.css);
-@import url(/resources/css/colors.css);
 @import url(/resources/css/cookiebar.css);
 @import url(/resources/css/fonts.css);
 
@@ -441,10 +440,12 @@ ul.schedule-list {
     height: 0.5em;
     float: left;
 }
+
+/* Fluxbar Animations */
  
 @-webkit-keyframes flux {
     0%   {width: 2%;}
-    50%  {width: 10%;}
+    50%  {width: 5%;}
     100% {width: 2%;}
 }
 
@@ -461,8 +462,8 @@ ul.schedule-list {
     margin-left: 1em;
     height: 0.5em;
     float: left;
-    -webkit-animation: flux 10s ease-in-out infinite;
-    animation: flux 10s ease-in-out infinite;
+    -webkit-animation: flux 7s ease-in-out infinite;
+    animation: flux 7s ease-in-out infinite;
 }
 
 .markers {
